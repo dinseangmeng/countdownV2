@@ -1,7 +1,7 @@
 <script setup>
 import timeTemplateVue from '../components/timeTemplate.vue';
 import store from '../store/index'
-import DateInputVue from '../components/DateInput.vue';
+// import DateInputVue from '../components/DateInput.vue';
 import { ref } from 'vue';
 // const Test=ref(0)
 const Hour=ref(0)
@@ -42,20 +42,23 @@ setInterval(LeftTime,1000)
 
 <template>
   <main>
+    <h1 class="title">Count Down</h1>
     <!-- <DateInputVue /> -->
     <div class="container">
       <timeTemplateVue :Time=" Day+'D'" :Rotation="dayRotation" />
       <timeTemplateVue :Time=" Hour+'H'  "  :Rotation="hourRotation"/>
       <timeTemplateVue :Time=" Minute+'M'" :Rotation="minuteRotation" />
       <timeTemplateVue :Time=" Second+'S'" :Rotation="secondRotation" />
+      
       <!-- <h1>Hello world</h1> -->
       <!-- {{ $store.state.endDate }} -->
     </div>
+    <h1><b>Left</b> till {{ $store.state.endDate }}</h1>
   </main>
 </template>
 <style scoped lang="scss">
 main{
-  
+  font-family: 'Crimson Text', serif;
   width: 100%;
   height: 100%;
   display: flex;
@@ -63,6 +66,13 @@ main{
   flex-direction: column;
   align-items: center;
   gap: 6rem;
+  h1{
+    // font-size: 2.5rem;
+    @media only screen and (min-width: 500px){
+      // flex-direction: column;
+      font-size: 4rem;
+    }
+  }
   .container{
     width: 80%;
     display: flex;
