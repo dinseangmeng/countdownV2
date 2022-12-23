@@ -4,11 +4,12 @@ import store from '../store';
 // console.log(store.date)
 const date = ref(store.state.endDate);
 // console.log(date.value)
+// cons
 const save=(e)=>{
     e.preventDefault();
     store.commit('setDate',date);
     store.commit('toggle',false);
-    console.log(date)
+    // console.log(date)
 }
 </script>
 <template>
