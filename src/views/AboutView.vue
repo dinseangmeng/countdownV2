@@ -1,7 +1,9 @@
 <script setup>
+import store from '../store';
 const open=()=>{
   window.open('https://www.dinseangmeng.xyz')
 }
+store.commit('toggle',false);
 </script>
 <template>
   <main>

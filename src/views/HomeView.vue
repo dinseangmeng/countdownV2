@@ -1,7 +1,7 @@
 <script setup>
 import timeTemplateVue from '../components/timeTemplate.vue';
 import store from '../store/index'
-// import DateInputVue from '../components/DateInput.vue';
+import DateInputVue from '../components/DateInput.vue';
 import { ref } from 'vue';
 // const Test=ref(0)
 const Hour=ref(0)
@@ -42,8 +42,8 @@ setInterval(LeftTime,1000)
 
 <template>
   <main>
+    <DateInputVue v-if="$store.state.isChangeDate" />
     <h1 class="title">Count Down</h1>
-    <!-- <DateInputVue /> -->
     <div class="container">
       <timeTemplateVue :Time=" Day+'D'" :Rotation="dayRotation" />
       <timeTemplateVue :Time=" Hour+'H'  "  :Rotation="hourRotation"/>
